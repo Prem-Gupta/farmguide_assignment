@@ -70,9 +70,7 @@ router.post("/otpLogin", async (req, res) => {
     let mobileNumber = mobile.toString()
     mobileNumber = parseInt(mobileNumber.substring(2))
     const user = await User.findMobile(mobileNumber)
-    console.log(user);
     const token = await user.generateAuthToken()
-    console.log(token)
     var cookieInfo = {
         token: token,
     };
