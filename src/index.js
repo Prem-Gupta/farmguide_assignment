@@ -10,8 +10,9 @@ const userRouter = require('./routers/signUp')
 const loginRouter = require('./routers/login')
 const profileRouter = require('./routers/profile')
 const logoutRouter = require('./routers/logout')
+const reportsRouter = require('./routers/reports')
 
-const port = process.env.PORT
+const port = process.env.PORT || 3000
 BaseUrl = process.env.BaseUrl;
 
 app.use(express.json())
@@ -29,6 +30,7 @@ app.use(userRouter)
 app.use(loginRouter)
 app.use(profileRouter)
 app.use(logoutRouter)
+app.use(reportsRouter)
 
 app.listen(port, () => {
     console.log("Server is connected on port " + port)

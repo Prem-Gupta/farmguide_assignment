@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>AI readiness report | FarmGuide</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/reports.css">
+</head>
+<body class="report-page">
+    <main class="report-shell">
+        <nav class="report-nav" aria-label="Report navigation">
+            <a class="report-brand" href="/">FarmGuide</a>
+            <a class="report-back" href="/"><i class="fa fa-arrow-left" aria-hidden="true"></i>Back to welcome</a>
+        </nav>
+
+        <header class="report-heading">
+            <div>
+                <div class="report-kicker">Repository intelligence / baseline</div>
+                <h1>AI readiness report</h1>
+            </div>
+            <p>How prepared is this repository for reliable, safe AI-assisted engineering?</p>
+        </header>
+
+        <section class="report-grid" aria-label="AI repository readiness overview">
+            <article class="report-card report-score-card">
+                <div class="report-score-label">Overall compatibility</div>
+                <div class="report-score"><%= report.score %><span>%</span></div>
+                <p class="report-score-note">A workable foundation with clear instructions, but testing and dependency hygiene are holding back autonomous changes.</p>
+                <div class="report-score-footer">
+                    <span>Baseline assessment</span>
+                    <span><%= report.assessedAt %></span>
+                </div>
+            </article>
+
+            <article class="report-card report-categories">
+                <div class="report-panel-heading">
+                    <h2>Readiness by area</h2>
+                    <span>6 of 12 areas shown</span>
+                </div>
+                <% report.categories.forEach(function (category) { %>
+                    <div class="report-category <%= category.score < 40 ? 'is-low' : category.score < 70 ? 'is-medium' : '' %>">
+                        <div class="report-score-line">
+                            <span class="report-category-name"><%= category.name %></span>
+                            <span class="report-status"><%= category.status %></span>
+                            <span class="report-category-score"><%= category.score %>%</span>
+                        </div>
+                        <div class="report-progress" role="progressbar" aria-label="<%= category.name %>" aria-valuenow="<%= category.score %>" aria-valuemin="0" aria-valuemax="100">
+                            <span style="width: <%= category.score %>%"></span>
+                        </div>
+                        <div class="report-category-detail"><%= category.detail %></div>
+                    </div>
+                <% }) %>
+            </article>
+
+            <article class="report-card report-actions">
+                <div class="report-panel-heading">
+                    <h2>Recommended next moves</h2>
+                    <span>Highest impact first</span>
+                </div>
+                <% report.actions.forEach(function (action) { %>
+                    <div class="report-action">
+                        <div>
+                            <div class="report-action-title"><%= action.title %></div>
+                            <div class="report-action-detail"><%= action.detail %></div>
+                        </div>
+                        <div class="report-priority"><%= action.priority %> priority</div>
+                    </div>
+                <% }) %>
+            </article>
+        </section>
+    </main>
+</body>
+</html>
