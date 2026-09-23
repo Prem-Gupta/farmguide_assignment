@@ -62,6 +62,30 @@ apiSecret=<Vonage API secret>
 
 Use Node 20 LTS, deploy from the repository or a ZIP package, and set the startup command to `npm start` if Azure does not detect it automatically. The MongoDB server must be reachable from Azure; `localhost` refers to the App Service instance and will not provide MongoDB. Do not place secrets in the repository or deployment package.
 
+## Standalone AI readiness report
+
+The report UI is intentionally separate from the MongoDB-backed application. It lives under `report-ui/` and is deployed independently as an Azure Static Web App.
+
+- Live report: https://lemon-mud-039e17d00.1.azurestaticapps.net
+- Azure resource: `farmguide-readiness-report`
+- Region: East Asia (Static Web Apps is not available in Southeast Asia)
+- Tier: Free
+
+Deploy only the report UI with the Azure Static Web Apps CLI after retrieving the deployment token from the resource:
+
+```text
+npx @azure/static-web-apps-cli deploy report-ui --deployment-token <token> --env production
+```
+
+The report's **Send email** action uses the Static Web App API under `report-ui/api/`. Configure these Application settings on the Static Web App before using it:
+
+```text
+SENDGRID_API_KEY=<SendGrid API key with mail.send permission>
+SENDGRID_FROM_EMAIL=<verified SendGrid sender address>
+```
+
+Deploy the API with `--api-location report-ui/api`. The recipient is intentionally fixed to `priyamgpt444@gmail.com`; no recipient or provider secret is stored in the frontend. The API generates an A4 PDF attachment and sends it through SendGrid. The sender address must be verified in SendGrid first.
+
 ## Validation
 
 ```text

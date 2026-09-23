@@ -1,0 +1,11 @@
+{
+    "navigationFallback": {
+        "rewrite": "/index.html",
+        "exclude": ["/*.{css,js,png,jpg,jpeg,gif,svg,ico,webp}", "/api/*"]
+    },
+    "globalHeaders": {
+        "X-Content-Type-Options": "nosniff",
+        "Referrer-Policy": "strict-origin-when-cross-origin",
+        "Content-Security-Policy": "default-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; script-src 'self'; base-uri 'none'; frame-ancestors 'none'"
+    }
+}

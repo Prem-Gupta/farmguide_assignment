@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="AI repository readiness report for FarmGuide.">
+    <title>FarmGuide | AI readiness report</title>
+    <link rel="stylesheet" href="style.css?v=10">
+</head>
+<body>
+    <main class="workspace-shell">
+        <aside class="sidebar">
+            <div class="side-brand"><span class="brand-mark">F</span><span>FarmGuide</span></div>
+            <div class="side-profile"><span class="profile-avatar">AI</span><div><strong>Repository</strong><small>farmguide_assignment</small></div></div>
+            <p class="side-label">Workspace</p>
+            <nav class="side-nav" aria-label="Workspace navigation">
+                <a class="is-active" href="#overview"><span>▦</span>Overview</a>
+                <a href="#scorecard"><span>◒</span>Scorecard</a>
+                <a href="#evidence"><span>◷</span>Evidence</a>
+                <a href="#actions"><span>✓</span>Action plan</a>
+            </nav>
+            <p class="side-label side-label-projects">Repository</p>
+            <nav class="side-nav">
+                <a href="#scorecard"><span>▤</span>Readiness areas</a>
+                <a href="#evidence"><span>⌁</span>Checks & signals</a>
+                <a href="#actions"><span>⚙</span>Settings</a>
+            </nav>
+            <div class="side-footer"><span class="status-dot"></span><div><strong>Assessment online</strong><small>Updated 23 Sep 2026</small></div></div>
+        </aside>
+
+        <section class="workspace-main">
+            <header class="topbar">
+                <div class="search-box"><span>⌕</span><input aria-label="Search report" placeholder="Search this report" type="search"><kbd>/</kbd></div>
+                <div class="top-actions"><button type="button" id="quick-print" title="Print report">⌗</button><button type="button" title="Help">?</button><span class="top-avatar">DS</span></div>
+            </header>
+
+            <div class="workspace-content" id="overview">
+                <div class="workspace-heading">
+                    <div><p class="eyebrow">Repository intelligence / baseline</p><h1 id="page-title">AI readiness workspace <span>✎</span></h1></div>
+                    <div class="workspace-meta"><span class="live-pill"><i></i>Live assessment</span><button class="button button-light" id="send-email" type="button">Send email</button><button class="button button-dark" id="export-pdf" type="button">Export PDF</button><span class="action-status" id="email-status" role="status" aria-live="polite"></span></div>
+                </div>
+                <nav class="report-tabs" aria-label="Report sections"><a class="is-active" href="#overview">Overview</a><a href="#scorecard">Scorecard</a><a href="#evidence">Evidence</a><a href="#actions">Action plan</a></nav>
+
+        <section class="score-layout" aria-label="Overall readiness score">
+            <article class="score-panel">
+                <div class="score-panel-head">
+                    <span>Overall compatibility</span>
+                    <span class="score-chip">Baseline</span>
+                </div>
+                <div class="score-ring" aria-label="52 percent AI repository compatibility">
+                    <div class="score-ring-inner">
+                        <strong>52<small>%</small></strong>
+                        <span>ready to scale</span>
+                    </div>
+                </div>
+                <p class="score-summary">The foundation is in place. Clear agent instructions and setup documentation lead the score, while testing and dependency hygiene remain the biggest opportunities.</p>
+            </article>
+
+            <div class="signal-grid">
+                <article class="signal-card signal-positive">
+                    <span class="signal-icon">+</span>
+                    <div><strong>Strongest signal</strong><p>AI instructions <b>92%</b></p></div>
+                </article>
+                <article class="signal-card signal-warning">
+                    <span class="signal-icon">!</span>
+                    <div><strong>Biggest gap</strong><p>Testing quality <b>18%</b></p></div>
+                </article>
+                <article class="signal-card signal-neutral">
+                    <span class="signal-icon">↗</span>
+                    <div><strong>Fastest lift</strong><p>Add focused route tests</p></div>
+                </article>
+                <article class="signal-card signal-neutral">
+                    <span class="signal-icon">6</span>
+                    <div><strong>Areas reviewed</strong><p>Across the repository</p></div>
+                </article>
+            </div>
+        </section>
+
+        <section class="visual-grid" aria-label="Readiness visual analysis">
+            <article class="panel chart-panel">
+                <div class="panel-heading"><div><p class="eyebrow">Portfolio view</p><h2>Readiness distribution</h2></div><span class="panel-note">Current score / 100</span></div>
+                <div class="chart-wrap">
+                    <svg class="readiness-chart" viewBox="0 0 760 290" role="img" aria-label="Bar chart comparing readiness scores across six areas">
+                        <line x1="42" y1="24" x2="42" y2="236" class="axis-line" />
+                        <line x1="42" y1="236" x2="735" y2="236" class="axis-line" />
+                        <line x1="42" y1="130" x2="735" y2="130" class="grid-line" />
+                        <line x1="42" y1="77" x2="735" y2="77" class="grid-line" />
+                        <text x="14" y="240">0</text><text x="8" y="134">50</text><text x="2" y="81">75</text><text x="2" y="29">100</text>
+                        <rect x="80" y="70" width="70" height="166" rx="4" class="bar-blue" /><text x="115" y="260">Context</text><text x="105" y="60" class="value-label">78</text>
+                        <rect x="190" y="40" width="70" height="196" rx="4" class="bar-cyan" /><text x="225" y="260">AI rules</text><text x="215" y="30" class="value-label">92</text>
+                        <rect x="300" y="83" width="70" height="153" rx="4" class="bar-blue" /><text x="335" y="260">Setup</text><text x="325" y="73" class="value-label">72</text>
+                        <rect x="410" y="96" width="70" height="140" rx="4" class="bar-blue" /><text x="445" y="260">Build</text><text x="435" y="86" class="value-label">66</text>
+                        <rect x="520" y="198" width="70" height="38" rx="4" class="bar-coral" /><text x="555" y="260">Testing</text><text x="545" y="188" class="value-label">18</text>
+                        <rect x="630" y="143" width="70" height="93" rx="4" class="bar-amber" /><text x="665" y="260">Security</text><text x="655" y="133" class="value-label">44</text>
+                    </svg>
+                </div>
+            </article>
+            <article class="panel insight-panel">
+                <div class="panel-heading"><div><p class="eyebrow">Decision support</p><h2>Gap to 100%</h2></div><span class="panel-note">Priority signal</span></div>
+                <div class="gap-ring"><strong>48<small>pts</small></strong><span>remaining</span></div>
+                <div class="gap-legend"><div><i class="legend-coral"></i><span>Needs immediate work</span><b>Testing</b></div><div><i class="legend-amber"></i><span>Needs strengthening</span><b>Security</b></div><div><i class="legend-blue"></i><span>Near target</span><b>AI instructions</b></div></div>
+            </article>
+        </section>
+
+        <section class="content-grid">
+            <article class="panel area-panel" id="scorecard">
+                <div class="panel-heading">
+                    <div><p class="eyebrow">Scorecard</p><h2>Readiness by area</h2></div>
+                    <span class="panel-note">Weighted baseline</span>
+                </div>
+                <div class="area-list">
+                    <div class="area-row"><div class="area-info"><span>Repository context</span><small>Current: README and architecture map</small><em>100% requires: supported versions, directory ownership, request flows, and a maintained architecture overview.</em></div><div class="bar"><i class="fill-78"></i></div><strong>78</strong></div>
+                    <div class="area-row"><div class="area-info"><span>AI instructions</span><small>Current: AGENTS.md defines workflow and boundaries</small><em>100% requires: task routing, edit restrictions, validation commands, generated-file rules, and approval gates kept current.</em></div><div class="bar"><i class="fill-92"></i></div><strong>92</strong></div>
+                    <div class="area-row"><div class="area-info"><span>Development setup</span><small>Current: environment template and install guidance</small><em>100% requires: one-command bootstrap, pinned tool versions, complete variable reference, local services, and troubleshooting steps.</em></div><div class="bar"><i class="fill-72"></i></div><strong>72</strong></div>
+                    <div class="area-row"><div class="area-info"><span>Build and validation</span><small>Current: syntax check and GitHub Actions CI</small><em>100% requires: deterministic build, lint, format, type-check, unit test, integration test, and coverage commands running in CI.</em></div><div class="bar"><i class="fill-66"></i></div><strong>66</strong></div>
+                    <div class="area-row is-low"><div class="area-info"><span>Testing quality</span><small>Current: no unit or integration suite</small><em>100% requires: route and model tests, fixtures, mocks for MongoDB and Vonage, failure cases, and documented coverage expectations.</em></div><div class="bar"><i class="fill-18"></i></div><strong>18</strong></div>
+                    <div class="area-row is-medium"><div class="area-info"><span>Security readiness</span><small>Current: policy exists; legacy dependencies remain</small><em>100% requires: secret scanning, dependency and code scanning, validated input boundaries, least privilege, secure cookies, and a private disclosure path.</em></div><div class="bar"><i class="fill-44"></i></div><strong>44</strong></div>
+                </div>
+                <div class="scorecard-footnote"><strong>How to read this:</strong> the percentage reflects repository evidence found during the baseline review. Full credit requires both the artifact and a working validation path for it.</div>
+            </article>
+
+            <article class="panel evidence-panel" id="evidence">
+                <div class="panel-heading"><div><p class="eyebrow">Evidence</p><h2>What is already working</h2></div></div>
+                <ul class="evidence-list">
+                    <li><span>01</span><div><strong>Repository contract</strong><p>README, AGENTS.md, and environment guidance make the project discoverable.</p></div></li>
+                    <li><span>02</span><div><strong>Repeatable check</strong><p>JavaScript syntax validation runs locally and in GitHub Actions.</p></div></li>
+                    <li><span>03</span><div><strong>Safety boundaries</strong><p>Secrets, migrations, auth, and provider changes have explicit review boundaries.</p></div></li>
+                </ul>
+            </article>
+        </section>
+
+        <section class="panel actions-panel" id="actions">
+            <div class="panel-heading"><div><p class="eyebrow">Recommended next moves</p><h2>Raise the score with three focused changes</h2></div><span class="panel-note">Highest impact first</span></div>
+            <div class="action-grid">
+                <article class="action-card"><span class="priority priority-high">01 / high</span><h3>Add route and model tests</h3><p>Establish a test pattern for authentication, persistence, and report rendering.</p></article>
+                <article class="action-card"><span class="priority priority-high">02 / high</span><h3>Resolve audit findings</h3><p>Review the legacy dependency tree before treating the repository as production-ready.</p></article>
+                <article class="action-card"><span class="priority priority-medium">03 / medium</span><h3>Document task discovery</h3><p>Add issue templates with acceptance criteria, reproduction steps, and affected components.</p></article>
+            </div>
+        </section>
+
+        <footer class="footer"><span>FarmGuide AI readiness report</span><span>Generated from repository evidence · 23 Sep 2026</span></footer>
+            </div>
+        </section>
+    </main>
+    <script src="app.js?v=2" defer></script>
+</body>
+</html>
