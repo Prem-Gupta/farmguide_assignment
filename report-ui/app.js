@@ -25,7 +25,7 @@ function sendReportEmail() {
     button.disabled = true;
     status.textContent = 'Sending PDF...';
 
-    fetch('https://farmguide-readiness-email.azurewebsites.net/api/send-report', {
+    fetch('https://farmguide-readiness-email-flex.azurewebsites.net/api/send-report', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ report: reportSummary() })
