@@ -77,14 +77,22 @@ Deploy only the report UI with the Azure Static Web Apps CLI after retrieving th
 npx @azure/static-web-apps-cli deploy report-ui --deployment-token <token> --env production
 ```
 
-The report's **Send email** action uses the Static Web App API under `report-ui/api/`. Configure these Application settings on the Static Web App before using it:
+The report's **Send email** action uses the Flex Consumption Function App under `report-ui/api/`. Configure these Application settings on `farmguide-readiness-email-flex` before using it:
 
 ```text
 SENDGRID_API_KEY=<SendGrid API key with mail.send permission>
 SENDGRID_FROM_EMAIL=<verified SendGrid sender address>
 ```
 
-Deploy the API with `--api-location report-ui/api`. The recipient is intentionally fixed to `priyamgpt444@gmail.com`; no recipient or provider secret is stored in the frontend. The API generates an A4 PDF attachment and sends it through SendGrid. The sender address must be verified in SendGrid first.
+Deployments use GitHub OIDC. Add these repository secrets before pushing API changes:
+
+```text
+AZURE_CLIENT_ID=14422ccc-e6ab-4069-bcde-667e423a0b06
+AZURE_TENANT_ID=6c56e644-8097-4e0f-bbdd-ab3b02d559b6
+AZURE_SUBSCRIPTION_ID=371cbe2e-20f8-4cb5-8b65-7b787a52c039
+```
+
+The recipient is intentionally fixed to `priyamgpt444@gmail.com`; no recipient or provider secret is stored in the frontend. The API generates an A4 PDF attachment and sends it through SendGrid. The sender address must be verified in SendGrid first.
 
 ## Validation
 
